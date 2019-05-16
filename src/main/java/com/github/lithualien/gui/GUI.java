@@ -22,6 +22,7 @@ public class GUI extends JFrame{
         setTextFields();
         setButtons();
         setLabels();
+        setActionListenerForDecryptButton();
         receiveMessages();
     }
 
@@ -75,14 +76,10 @@ public class GUI extends JFrame{
                 message = (Message) getMessage.readObject();
                 hashMessage.setText(message.getHash());
                 output.setText("");
-                setActionListenerForDecryptButton();
             }
         }
         catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-
-
-
     }
 }
